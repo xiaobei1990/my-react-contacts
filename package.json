@@ -1,6 +1,6 @@
 {
   "name": "virsical-bpmn-viewer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "bpmn viewer",
   "main": "lib/index.js",
   "scripts": {
@@ -9,6 +9,10 @@
     "build": "webpack --config config/webpack.config.js",
     "pub": "npm run build && npm publish"
   },
+  "files": [
+    "dist",
+    "js"
+  ],
   "author": "",
   "license": "ISC",
   "keywords": [],
@@ -35,6 +39,9 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
     "bpmn-js": "^13.2.2",
     "umi": "^4.0.74"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "browserslist": {
     "production": [
