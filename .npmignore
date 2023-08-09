@@ -2,4 +2,5 @@
 # npm 默认不会把 node_modules 发上去
 example # 开发时预览代码
 src # 组件源代码目录
+config # webpack配置
 .babelrc # babel 配置
