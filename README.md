@@ -5,12 +5,14 @@ yarn add virsical-bpmn-viewer
 
 使用方式：
 
+```js
 import CustomBpmnViewer from 'virsical-bpmn-viewer';
 
 const xml = '<?xml version="1.0" encoding="UTF-8"?>';
 
 <CustomBpmnViewer contextXML={xml} />
 
+```
 
 属性介绍：
 
