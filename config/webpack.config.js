@@ -27,7 +27,7 @@ module.exports = function (env) {
         },
         {
           test: /\.css$/,
-          use: 'raw-loader'
+          use: ['style-loader', 'css-loader'],
           //  loader: [MiniCssExtractPlugin.loader,'css-loader?modules'],
         },
       ]
