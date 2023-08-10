@@ -2,6 +2,12 @@ import React, { useEffect } from 'react';
 import PropsTypes from "prop-types";
 import BpmnViewer from  'bpmn-js/lib/Viewer';
 
+// 以下为bpmn工作流绘图工具的样式
+import 'bpmn-js/dist/assets/diagram-js.css'; // 左边工具栏以及编辑节点的样式B
+import 'bpmn-js/dist/assets/bpmn-font/css/bpmn.css';
+import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-codes.css';
+import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css';
+
 
 const DEFAULT_WIDTH = 1920; // 缺省宽度
 const DEFAULT_HEIGHT = 1080; // 缺省高度
@@ -45,6 +51,11 @@ function CustomBpmnViewer(props) {
       svgDom[0].style.display = 'none';
     }
 
+    const textDom = document.getElementsByClassName('bjs-breadcrumbs');
+    if(textDom){
+      textDom[0].style.display = 'none';
+    }
+
     return () => {
         bpmnViewer.detach();
         bpmnViewer.destroy();
@@ -73,7 +84,7 @@ function CustomBpmnViewer(props) {
           // 监听元素点击事件
           eventBus.on('element.click', function(event) {
             let element = event.element;
-            window.console.log('点击事件---', element);
+           // window.console.log('点击事件---', element);
             onClickHandle(element);
           });
 
@@ -112,9 +123,7 @@ function CustomBpmnViewer(props) {
   }
 
  // const styleShow = {...SVGStyle, width: componentWidth, height: componentHeight};
-  return <div style={{width: componentWidth, height: componentHeight}}>
-    <div  style={{ width: '100%', height: '100%' }} id='canvasShow' className='container' />
-  </div>
+  return <div  style={{ width: '100%', height: '100%' }} id='canvasShow' className='container' />
 }
 
 CustomBpmnViewer.propTypes = {

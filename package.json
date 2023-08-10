@@ -1,6 +1,6 @@
 {
   "name": "virsical-bpmn-viewer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "bpmn viewer",
   "main": "index.js",
   "scripts": {
